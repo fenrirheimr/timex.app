@@ -12,12 +12,13 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
-    "native-base": "3.2.1",
+    "native-base": "^3.2.2",
     "react": "17.0.1",
     "react-native": "0.64.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
     "react-native-svg": "^12.1.1",
+    "react-native-touch-id": "^4.4.1",
     "styled-components": "^5.3.0",
     "styled-system": "^5.1.5"
   },
