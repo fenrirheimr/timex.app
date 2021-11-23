@@ -9,8 +9,7 @@ import {
 	useColorMode,
 	NativeBaseProvider,
 	VStack,
-	Code,
-	Button, View
+	Button
 } from 'native-base';
 
 import TimexLogo from '../components/TimexLogo';
@@ -45,8 +44,6 @@ const HomePage = ({ navigation, props }) => {
 					<Heading size="lg">Welcome to hell</Heading>
 					<TimexLogo />
 					<HStack space={2} alignItems="center">
-						{/*<Button size="lg" onPress={() => console.log(navigation)}>Login</Button>*/}
-						{/*<Button size="lg" onPress={() => console.log(navigation.navigate('LoginPage'))}>Login</Button>*/}
 						<Button size="lg" onPress={() => navigation.navigate('LoginPage')}>Login</Button>
 						<Button size="lg" onPress={() => navigation.navigate('SignupPage')}>Sign Up</Button>
 						<Button size="lg" onPress={() => navigation.navigate('CameraPage')}>Camera</Button>

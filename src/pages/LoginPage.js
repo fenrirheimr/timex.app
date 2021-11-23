@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import {
 	NativeBaseProvider,
 	Box,
@@ -10,11 +9,49 @@ import {
 	Input,
 	Link,
 	Button,
-	Icon,
-	IconButton,
-	HStack,
-	Divider,
+	HStack
 } from 'native-base';
+import { Alert, TouchableOpacity } from 'react-native';
+import TouchID from 'react-native-touch-id';
+
+const optionalConfigObject = {
+  title: "Authentication Required", // Android
+  color: "ffffff", // Android
+//   fallbackLabel: "Show Passcode" // iOS (if empty, then label is hidden)
+}
+
+auth = () => {
+	TouchID.authenticate("Authenticate", optionalConfigObject)
+			.then(success => {
+			  Alert.alert('Authenticated Successfully');
+			})
+			.catch(error => {
+			  Alert.alert('Authentication Failed', error.toString());
+			});
+}
+
+checkTouchId = () => {
+	TouchID.isSupported()
+	  .then(biometryType => {
+		// Success code
+		if (biometryType === 'FaceID') {
+			console.log('FaceID is supported.');
+			this.auth()
+		} else if (biometryType === 'TouchID') {
+			console.log('TouchID is supported.');
+		  	this.auth()
+		} else if (biometryType === true) {
+			console.log('Touch ID is supported on Android');
+			this.auth()
+		}
+	  })
+	  .catch(error => {
+		// Failure code
+		Alert.alert(`Authentication Failed ${error}`);
+		console.log(error);
+	  });
+
+  }
 
 const LoginPage = ({ navigation }) => {
 	return (
@@ -56,9 +93,17 @@ const LoginPage = ({ navigation }) => {
 							Forget Password?
 						</Link>
 					</FormControl>
-					<Button mt="2" colorScheme="indigo" _text={{ color: 'white' }}>
+					<Button mt="2" colorScheme="indigo">
 						Sign in
 					</Button>
+					<TouchableOpacity justifyContent="center">
+						<Button
+							colorScheme="indigo"
+							onPress={this.checkTouchId.bind(this)}
+						>
+							Authenticate with touchId/faceId
+						</Button>
+					</TouchableOpacity>
 					<HStack mt="6" justifyContent="center">
 						<Text fontSize="sm" color="muted.700" fontWeight={400}>
 							I'm a new user.{' '}

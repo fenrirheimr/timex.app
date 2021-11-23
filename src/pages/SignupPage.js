@@ -1,21 +1,13 @@
 import * as React from 'react';
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import {
 	NativeBaseProvider,
 	Box,
-	Text,
 	Heading,
 	VStack,
 	FormControl,
 	Input,
-	Link,
-	Button,
-	Icon,
-	IconButton,
-	HStack,
-	Divider,
+	Button
 } from 'native-base';
-import LoginPage from "./LoginPage";
 
 const SignupPage = ({ navigation }) => {
 	return (
