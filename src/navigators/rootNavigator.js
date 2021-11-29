@@ -1,33 +1,17 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import HomePage from '../pages/HomePage';
-import LoginPage from '../pages/LoginPage';
-import SignupPage from '../pages/SignupPage';
-import CameraPage from '../pages/CameraPage';
+import { LoginPage, CameraPage } from '../pages/index';
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = ({ navigation }) => {
 	return (
-		<Stack.Navigator initialRouteName="HomePage">
-			<Stack.Screen
-				name="HomePage"
-				navigation={navigation}
-				component={HomePage}
-				options={{
-				headerShown: false,
-				}}
-			/>
+		<Stack.Navigator initialRouteName="LoginPage">
 			<Stack.Screen
 				name="LoginPage"
 				navigation={navigation}
 				component={LoginPage}
-			/>
-			<Stack.Screen
-				name="SignupPage"
-				navigation={navigation}
-				component={SignupPage}
 			/>
 			<Stack.Screen
 				name="CameraPage"

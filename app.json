@@ -1,4 +1,5 @@
 {
   "name": "timexApp",
-  "displayName": "timexApp"
+  "displayName": "timexApp",
+  "sourceExts": "timexApp"
 }

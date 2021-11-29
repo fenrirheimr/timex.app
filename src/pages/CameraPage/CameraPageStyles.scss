@@ -1,0 +1,42 @@
+.container {
+	flex: 1;
+	flex-direction: column;
+	background-color: black;
+}
+.containerTitle {
+	width: 100%;
+	text-align: center;
+	color: #FFF;
+}
+.scanner {
+	flex: 1;
+	justify-content: flex-end;
+	align-items: center;
+}
+.capture {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 15px;
+	margin: 20px;
+}
+.snap {
+	color: #000;
+	font-size: 20px;
+}
+.barcodeFragment {
+	border: 2px solid #F00;
+	position: absolute;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 10px;
+}
+.barcodeText {
+	color: #F00;
+	flex: 1;
+	position: absolute;
+	text-align: center;
+	background-color: transparent;
+}
