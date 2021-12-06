@@ -1,0 +1,17 @@
+@import 'src/styles/colors.scss';
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #5825EB;
+    margin-bottom: 16px;
+    height: 48px;
+    width: 100%;
+}
+.title {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+}

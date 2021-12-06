@@ -1,0 +1,31 @@
+@import 'src/styles/colors.scss';
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: $txbackground;
+    padding: 50px 16px 50px 16px;
+    width: 100%;
+}
+.actions {
+    font-size: 14px;
+    line-height: 16px;
+    color: $txblack;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;;
+}
+.recover {
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+.signup {
+    margin: 0 8px;;
+    font-weight: 500;
+}
+.question {
+    line-height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
